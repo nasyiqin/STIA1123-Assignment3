@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.io.*;
 
-class MyFrame extends JFrame implements ActionListener {
+class Makeup extends JFrame implements ActionListener {
 
+    ArrayList<Makeup> makeuplist;
+    
     // Components of the Form
     private Container c;
     private JLabel title;
@@ -39,8 +42,10 @@ class MyFrame extends JFrame implements ActionListener {
 
     // constructor, to initialize the components
     // with default values.
-    public MyFrame()
+    public Makeup()
     {
+        makeuplist = new ArrayList<>();
+        
         setTitle("Makeup");
         setBounds(300, 90, 900, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
