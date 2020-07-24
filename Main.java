@@ -290,7 +290,7 @@ class Makeup extends JFrame implements ActionListener {
             tout.setText(data4 + data5);
         }
 
-        else if (e.getSource() == reset) {
+        else if (e.getSource() == delete) {
             String def = "";
             tname.setText(def);
 //            tadd.setText(def);
@@ -302,7 +302,21 @@ class Makeup extends JFrame implements ActionListener {
             makeup.setSelectedIndex(0);
             resadd.setText(def);
             worded.setText(def);
-        }
+            
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Delete this data", "Delete", dialogButton);
+             if (dialogResult == 0) {
+                 dtm.removeRow(row);
+                 makeuplist.remove(row);
+                   dtm.setRowCount(0);
+                  int i = 0;
+                 for (int i = 0; i < makeuplist.size(); i++) {
+                Object[] objs = (makeuplist.get(i).name,clotheslist.get(i).phoneno,makeuplist.get(i).category,makeuplist.get(i).product,makeuplist.get(i).price,);
+                dtm.addRow(objs);
+              } else {     
+        
+                }
+            }
 
         else if(e.getSource() == searching){
 
