@@ -357,6 +357,11 @@ class Makeup extends JFrame implements ActionListener {
 public class Main {
 
     public static void main(String[] args) throws Exception{
-        MyFrame f = new MyFrame();
+        
+        java.awt.EventQueue.invokeLater(() -> {
+            new Clothes().setVisible(true);
+        });
+        
+        Makeup f = new Makeup();
     }
 }
